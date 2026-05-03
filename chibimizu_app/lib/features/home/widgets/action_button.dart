@@ -21,7 +21,7 @@ class ActionButton extends StatelessWidget {
 
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(22),
 
         boxShadow: [
           BoxShadow(
