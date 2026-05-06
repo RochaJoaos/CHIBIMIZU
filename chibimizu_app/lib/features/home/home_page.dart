@@ -1,8 +1,10 @@
+import 'package:chibimizu_app/features/home/widgets/water_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
 
 import '../game/chibimizu_game.dart';
 import 'widgets/bottom_buttons.dart';
+import 'widgets/water_counter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,6 +14,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+
+          
           GameWidget(
             game: ChibimizuGame(),
           ),
@@ -19,13 +23,16 @@ class HomePage extends StatelessWidget {
           SafeArea(
             child: Column(
               children: [
-                SizedBox(height: 80),
+                // 🔹 BARRA SUPERIOR
+                const WaterMCounter(),
 
+                // 🔹 ESPAÇO DO JOGO
                 Expanded(
                   child: Container(),
                 ),
 
-                BottomButtons(),
+                // 🔹 BOTÕES INFERIORES
+                const BottomButtons(),
               ],
             ),
           ),
