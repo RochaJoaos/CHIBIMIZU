@@ -1,4 +1,3 @@
-import 'package:chibimizu_app/features/home/widgets/water_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
 
@@ -24,7 +23,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               children: [
                 // 🔹 BARRA SUPERIOR
-                const WaterMCounter(),
+                const WaterCounter(),
 
                 // 🔹 ESPAÇO DO JOGO
                 Expanded(

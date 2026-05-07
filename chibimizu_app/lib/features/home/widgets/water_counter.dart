@@ -1,26 +1,42 @@
-import 'package:chibimizu_app/features/home/widgets/water_bar.dart';
-import 'package:chibimizu_app/features/home/widgets/water_button.dart';
 import 'package:flutter/material.dart';
 
-class WaterMCounter extends StatelessWidget {
-    const WaterMCounter ({super.key});
+import 'water_button.dart';
+import 'water_bar.dart';
 
-    @override
-    Widget build(BuildContext context) {
-        return Padding(
-            padding: const EdgeInsets.only(left: 14, right: 14, bottom: 14),
-            child: Row(
-                children: const[
-                    SizedBox(width: 4),
-                    Expanded(
-                        child: WaterButton(),
-                    ),
-                    SizedBox(width: 12),
-                    Expanded(
-                        child: WaterBar(),
-                        )
-                ],
+class WaterCounter extends StatelessWidget {
+  const WaterCounter({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.only(
+        top: 16,
+        left: 14,
+        right: 14,
+      ),
+      child: SizedBox(
+        height: 64,
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Positioned(
+              left: 36,
+              right: 0,
+              top: 10,
+              child: WaterBar(
+                currentMl: 1282,
+                goalMl: 2000,
+              ),
             ),
-        );
-    }
+
+            Positioned(
+              left: 0,
+              top: 0,
+              child: WaterButton(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
