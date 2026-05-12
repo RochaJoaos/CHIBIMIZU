@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'features/home/home_page.dart';
+import 'features/auth/sign_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: const HomePage(),
+      home: const SignPage(),
     );
   }
 }
