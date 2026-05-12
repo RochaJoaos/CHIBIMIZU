@@ -7,10 +7,11 @@ class GoogleSignButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 34,
+      width: MediaQuery.of(context).size.width * 0.6,
+      height: 40,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(9),
+        borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: const Color(0xFF777777),
           width: 1,
@@ -21,14 +22,14 @@ class GoogleSignButton extends StatelessWidget {
         children: [
           SvgPicture.asset(
             'assets/icons/google.svg',
-            width: 16,
-            height: 16,
+            width: 18,
+            height: 18,
           ),
           const SizedBox(width: 10),
           const Text(
             'Entrar com google',
             style: TextStyle(
-              fontSize: 11,
+              fontSize: 16,
               fontWeight: FontWeight.w500,
               color: Color(0xFF555555),
             ),

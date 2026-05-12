@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'features/home/home_page.dart';
 import 'features/auth/sign_page.dart';
 
 void main() {

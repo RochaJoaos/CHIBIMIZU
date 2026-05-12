@@ -6,17 +6,17 @@ class SignSubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 30,
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width * 0.7,
+      height: 36,
       decoration: BoxDecoration(
         color: const Color(0xFF57E000),
-        borderRadius: BorderRadius.circular(7),
+        borderRadius: BorderRadius.circular(12),
       ),
       child: const Center(
         child: Text(
           'entrar',
           style: TextStyle(
-            fontSize: 13,
+            fontSize: 16,
             fontWeight: FontWeight.w700,
             color: Colors.white,
           ),

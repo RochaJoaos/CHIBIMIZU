@@ -39,7 +39,7 @@ class SignPage extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 26),
+                  const SizedBox(height: 32),
 
                   const GoogleSignButton(),
 
@@ -49,14 +49,14 @@ class SignPage extends StatelessWidget {
                     label: 'email',
                   ),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
 
                   const SignInput(
                     label: 'senha',
                     obscureText: true,
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 36),
 
                   const SignSubmitButton(),
 
