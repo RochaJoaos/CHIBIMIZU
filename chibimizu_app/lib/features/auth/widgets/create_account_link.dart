@@ -8,7 +8,7 @@ class CreateAccountLink extends StatelessWidget {
     return const Text(
       'criar conta',
       style: TextStyle(
-        fontSize: 12,
+        fontSize: 16,
         fontWeight: FontWeight.w700,
         color: Color(0xFF57E000),
       ),

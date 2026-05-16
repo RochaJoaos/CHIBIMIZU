@@ -60,7 +60,7 @@ class SignPage extends StatelessWidget {
 
                   const SignSubmitButton(),
 
-                  const SizedBox(height: 9),
+                  const SizedBox(height: 18),
 
                   const CreateAccountLink(),
 
