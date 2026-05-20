@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 
 import 'water_button.dart';
@@ -50,6 +51,79 @@ class WaterCounter extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+*/
+
+import 'package:flutter/material.dart';
+
+import 'water_button.dart';
+import 'water_bar.dart';
+import 'water_add_button.dart';
+import 'water_label.dart';
+
+class WaterCounter extends StatelessWidget {
+  final int currentMl;
+  final int goalMl;
+
+  final VoidCallback onWaterPressed;
+  final VoidCallback onAddPressed;
+
+  const WaterCounter({
+    super.key,
+    required this.currentMl,
+    required this.goalMl,
+    required this.onWaterPressed,
+    required this.onAddPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 14,
+        left: 16,
+        right: 16,
+      ),
+
+      child: Column(
+        children: [
+
+          // LINHA SUPERIOR
+          Row(
+            children: [
+
+              // GOTA
+              WaterButton(
+                onPressed: onWaterPressed,
+              ),
+
+              const SizedBox(width: 10),
+
+              // BARRA
+              Expanded(
+                child: WaterBar(
+                  currentMl: currentMl,
+                  goalMl: goalMl,
+                ),
+              ),
+
+              const SizedBox(width: 10),
+
+              // BOTÃO +
+              WaterAddButton(
+                onPressed: onAddPressed,
+              ),
+            ],
+          ),
+          // TEXTO
+          WaterLabel(
+            currentMl: currentMl,
+            goalMl: goalMl,
+          ),
+        ],
       ),
     );
   }

@@ -42,11 +42,16 @@ class _HomePageState extends State<HomePage> {
           SafeArea(
             child: Column(
               children: [
-
+                
                 WaterCounter(
                   currentMl: currentMl,
                   goalMl: goalMl,
+
                   onWaterPressed: addWater,
+
+                  onAddPressed: () {
+                    print('Abrir editor');
+                  },
                 ),
 
                 Expanded(
