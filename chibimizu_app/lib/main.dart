@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'features/auth/sign_page.dart';
+import 'features/auth/auth_page.dart';
 import 'features/home/home_page.dart';
 
 void main() {
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: const HomePage(),
+      home: const AuthPage(),
     );
   }
 }

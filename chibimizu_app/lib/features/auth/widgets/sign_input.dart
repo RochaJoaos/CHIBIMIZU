@@ -28,10 +28,10 @@ class SignInput extends StatelessWidget {
         const SizedBox(height: 3),
 
         Container(
-          width: MediaQuery.of(context).size.width * 0.7,
+          width: MediaQuery.of(context).size.width * 0.65,
           height: 36,
           decoration: BoxDecoration(
-            color: const Color(0xFFE8E8E8),
+            color: const Color.fromARGB(255, 230, 230, 230),
             borderRadius: BorderRadius.circular(12),
           ),
           child: TextField(

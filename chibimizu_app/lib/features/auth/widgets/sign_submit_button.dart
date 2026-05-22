@@ -6,7 +6,7 @@ class SignSubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.7,
+      width: MediaQuery.of(context).size.width * 0.65,
       height: 36,
       decoration: BoxDecoration(
         color: const Color(0xFF57E000),
