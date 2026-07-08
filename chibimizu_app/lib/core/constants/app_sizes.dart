@@ -7,7 +7,7 @@ class AppSizes {
 
   static const spacing = 18.0;
 
-  static const cardWidth = 360.0;
+  static const cardWidth = double.infinity;
 
   static const cardHeight = 340.0;
 

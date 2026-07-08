@@ -15,23 +15,24 @@ class AppCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: AppSizes.cardWidth,
-      height: AppSizes.cardHeight,
+      margin: EdgeInsets.zero,
 
       decoration: BoxDecoration(
         color: AppColors.card,
 
-        borderRadius: BorderRadius.circular(
-          AppSizes.radius,
+        borderRadius: BorderRadius.only(
+
+          bottomLeft: Radius.circular(AppSizes.radius),
+          bottomRight: Radius.circular(AppSizes.radius),
+
         ),
 
         boxShadow: const [
-
           BoxShadow(
             blurRadius: 12,
             color: Colors.black12,
             offset: Offset(0, 4),
           )
-
         ],
       ),
 

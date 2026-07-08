@@ -21,8 +21,14 @@ class AppTextStyles {
   );
 
   static const button = TextStyle(
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: FontWeight.bold,
     color: Colors.white,
+  );
+
+    static const altbutton = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    color: Color(0xFF616161),
   );
 }
