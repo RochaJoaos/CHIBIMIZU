@@ -74,7 +74,7 @@ class OnboardingTemplate extends StatelessWidget {
                   ),
 
                   Positioned(
-                    bottom: -26,
+                    bottom: -16,
                     left: 24,
                     right: 24,
                     child: OnboardingNavigation(

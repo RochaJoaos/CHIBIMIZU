@@ -7,9 +7,7 @@ class InfoForm extends StatelessWidget {
   final OnboardingData data;
 
   const InfoForm({
-
     super.key,
-
     required this.data,
 
   });
@@ -18,13 +16,10 @@ class InfoForm extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Column(
-
       children: [
-
         AppTextField(
-
-          hint: "Idade",
-
+          hint: "idade",
+          
           controller: data.age,
 
           keyboardType: TextInputType.number,
@@ -34,20 +29,19 @@ class InfoForm extends StatelessWidget {
         const SizedBox(height:16),
 
         AppTextField(
-
-          hint: "Peso",
-
+          hint: "peso (kg)",
           controller: data.weight,
-
           keyboardType: TextInputType.number,
-
+          onChanged: (_) {
+            data.updateGoalFromWeight();
+          },
         ),
-
+        
         const SizedBox(height:16),
 
         AppTextField(
 
-          hint: "Altura",
+          hint: "altura (cm)",
 
           controller: data.height,
 

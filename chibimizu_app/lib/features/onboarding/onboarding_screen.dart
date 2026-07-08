@@ -9,6 +9,7 @@ import 'widgets/info_form.dart';
 import 'widgets/goal_form.dart';
 import 'widgets/cup_form.dart';
 import 'widgets/sip_form.dart';
+import 'widgets/finish_form.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -22,7 +23,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   int currentStep = 0;
 
-  static const int totalSteps = 6;
+  static const int totalSteps = 7;
 
   @override
   void dispose() {
@@ -66,6 +67,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       case 5:
         return "Quantidade de goles";
 
+      case 6:
+        return "Tudo pronto!";
+
       default:
         return "";
     }
@@ -91,30 +95,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       case 5:
         return "Quantos ml tem um gole seu?";
 
-      default:
-        return "";
-    }
-  }
-
-  String getSpeech() {
-    switch (currentStep) {
-      case 0:
-        return "Olá! Vamos cuidar da sua hidratação!";
-
-      case 1:
-        return "Como posso te chamar?";
-
-      case 2:
-        return "Só mais algumas informações.";
-
-      case 3:
-        return "Estamos quase terminando!";
-
-      case 4:
-        return "Agora vamos configurar seu copo.";
-
-      case 5:
-        return "Prontinho!";
+      case 6:
+        return "Confira seus dados antes de criar sua conta.";
 
       default:
         return "";
@@ -141,6 +123,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       case 5:
         return SipForm(data: data);
 
+      case 6:
+        return FinishForm(data: data);
+
       default:
         return const SizedBox();
     }
@@ -151,13 +136,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return OnboardingTemplate(
       title: getTitle(),
       subtitle: getSubtitle(),
-      speech: getSpeech(),
       body: AnimatedSwitcher(
         duration: const Duration(milliseconds: 300),
         child: getForm(),
       ),
       buttonText:
-          currentStep == totalSteps - 1 ? "Finalizar" : "Continuar",
+          currentStep == totalSteps - 1 ? "finalizar" : "avançar>",
       currentStep: currentStep,
       totalSteps: totalSteps,
       onNext: nextStep,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/services/hydration_service.dart';
 
 class OnboardingData {
 
@@ -30,7 +31,20 @@ class OnboardingData {
 
   // Goles
 
-  final sipVolume = TextEditingController();
+  final sipCount = TextEditingController();
+
+  void updateGoalFromWeight() {
+    final userWeight = double.tryParse(weight.text);
+
+    if (userWeight == null || userWeight <= 0) {
+      dailyGoal.clear();
+      return;
+    }
+
+    dailyGoal.text = HydrationService.calculateGoal(
+      weight: userWeight,
+    ).toString();
+  }
 
   void dispose() {
 
@@ -47,6 +61,6 @@ class OnboardingData {
 
     cupVolume.dispose();
 
-    sipVolume.dispose();
+    sipCount.dispose();
   }
 }

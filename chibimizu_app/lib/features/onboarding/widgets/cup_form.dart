@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/widgets/app_text_field.dart';
 import '../models/onboarding_data.dart';
 
-class CupForm extends StatelessWidget {
+class CupForm extends StatefulWidget {
   final OnboardingData data;
 
   const CupForm({
@@ -12,20 +11,50 @@ class CupForm extends StatelessWidget {
   });
 
   @override
+  State<CupForm> createState() => _CupFormState();
+}
+
+class _CupFormState extends State<CupForm> {
+  double value = 500;
+
+  @override
+  void initState() {
+    super.initState();
+
+    widget.data.cupVolume.text = value.round().toString();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-
-        AppTextField(
-          hint: "Ex.: 300 ml",
-          controller: data.cupVolume,
-          keyboardType: TextInputType.number,
+        Slider(
+          value: value,
+          min: 100,
+          max: 2000,
+          divisions: 38,
+          label: "${value.round()} ml",
+          onChanged: (v) {
+            setState(() {
+              value = v;
+              widget.data.cupVolume.text =
+                  value.round().toString();
+            });
+          },
         ),
 
-        const SizedBox(height: 16),
+        Text(
+          "${value.round()} ml",
+          style: const TextStyle(
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        const SizedBox(height: 12),
 
         const Text(
-          "Informe o copo que você mais utiliza.",
+          "Escolha o volume do recipiente que você mais utiliza.",
           textAlign: TextAlign.center,
         ),
       ],
