@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'features/auth/auth_page.dart';
 import 'features/home/home_page.dart';
+import 'features/onboarding/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: const AuthPage(),
+      home: const OnboardingScreen(),
     );
   }
 }
