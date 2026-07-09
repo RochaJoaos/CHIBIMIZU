@@ -101,14 +101,6 @@ class OnboardingTemplate extends StatelessWidget {
 
               const SizedBox(height: 24),
 
-              Center(
-                child: pet ??
-                    const SizedBox(
-                      height: 220,
-                    ),
-              ),
-
-              const SizedBox(height: 20),
 
               Center(
                 child: AppProgress(
@@ -117,7 +109,6 @@ class OnboardingTemplate extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 40),
             ],
           ),
         ),
